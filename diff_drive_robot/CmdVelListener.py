@@ -9,7 +9,7 @@ from geometry_msgs.msg import Twist
 class CmdVelListener(Node):
     def __init__(self):
         super().__init__('cmd_vel_listener')
-        self.create_subscription(Twist, 'velocity', self.cmd_vel_callback, 10)
+        self.create_subscription(Twist, 'cmd_vel', self.cmd_vel_callback, 10)
         self.get_logger().info('CmdVelListener has been started.')
 
     def cmd_vel_callback(self, msg : Twist):
